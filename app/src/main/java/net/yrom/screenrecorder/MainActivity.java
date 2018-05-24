@@ -341,7 +341,7 @@ public class MainActivity extends Activity {
         mRecorder.start();
         mButton.setText("Stop Recorder");
         registerReceiver(mStopActionReceiver, new IntentFilter(ACTION_STOP));
-        moveTaskToBack(true);
+//        moveTaskToBack(true);
     }
 
     private void stopRecorder() {
