@@ -74,7 +74,7 @@ abstract class BaseEncoder implements Encoder {
             throw new IllegalStateException("prepared!");
         }
         MediaFormat format = createMediaFormat();
-        Log.d("Encoder", "Create media format: " + format);
+        Log.e("Encoder", "Create media format: " + format);
 
         String mimeType = format.getString(MediaFormat.KEY_MIME);
         final MediaCodec encoder = createEncoder(mimeType);
@@ -112,7 +112,7 @@ abstract class BaseEncoder implements Encoder {
                 return MediaCodec.createByCodecName(mCodecName);
             }
         } catch (IOException e) {
-            Log.w("@@", "Create MediaCodec by name '" + mCodecName + "' failure!", e);
+            Log.e("@@", "Create MediaCodec by name '" + mCodecName + "' failure!", e);
         }
         return MediaCodec.createEncoderByType(type);
     }

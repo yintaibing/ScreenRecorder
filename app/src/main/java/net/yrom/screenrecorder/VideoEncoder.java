@@ -28,7 +28,7 @@ import java.util.Objects;
  * @version 2017/12/3
  */
 class VideoEncoder extends BaseEncoder {
-    private static final boolean VERBOSE = false;
+    private static final boolean VERBOSE = true;
     private VideoEncodeConfig mConfig;
     private Surface mSurface;
 
@@ -41,7 +41,7 @@ class VideoEncoder extends BaseEncoder {
     @Override
     protected void onEncoderConfigured(MediaCodec encoder) {
         mSurface = encoder.createInputSurface();
-        if (VERBOSE) Log.i("@@", "VideoEncoder create input surface: " + mSurface);
+        if (VERBOSE) Log.e("@@", "VideoEncoder create input surface: " + mSurface);
     }
 
     @Override
